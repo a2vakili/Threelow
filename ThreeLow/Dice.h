@@ -10,7 +10,8 @@
 
 @interface Dice : NSObject
 
-@property(nonatomic) int currentValue;
+@property(nonatomic) NSString *currentValue;
+
 
 -(void)randomValue;
 

@@ -14,16 +14,20 @@
 {
     self = [super init];
     if (self) {
-        _currentValue = 0;
+        _currentValue = [[NSString alloc]init];
     }
     return self;
 }
 
 -(void)randomValue{
     
-    self.currentValue = (int)arc4random_uniform(6) + 1;
+    NSArray *randomValues = @[@"⚀ = 1",@"⚁ = 2", @"⚂ = 3",@"⚃ = 4",@"⚄ = 5",@"⚅ = 6"];
     
-    NSLog(@"Dice number is %i",self.currentValue);
+    int random = (int)arc4random_uniform(6);
+    
+    self.currentValue = randomValues[random];
+    
+    
 }
 
 @end

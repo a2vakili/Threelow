@@ -11,13 +11,31 @@
 
 @interface GameController : NSObject
 
-@property(nonatomic,strong) NSArray *arrayOfDices;
+@property(nonatomic,strong) NSMutableArray *arrayOfDices;
 
-@property(nonatomic,strong) NSMutableSet *heldDies;
+@property(nonatomic,strong) NSMutableArray *heldDies;
+
+@property(nonatomic,strong) Dice *dice1;
+@property(nonatomic,strong) Dice *dice2;
+@property(nonatomic,strong) Dice *dice3;
+@property(nonatomic,strong) Dice *dice4;
+@property(nonatomic,strong) Dice *dice5;
+
+@property(nonatomic,strong) Dice *heldDie;
+
 
 
 -(void)throwingDices;
 
--(void)holdDie:(Dice *)die;
+-(void)holdDie:(NSNumber *)index;
+
+-(void)resetDice;
+
+-(void)displayHoldDies;
+
+-(void)calculateScore;
+
+-(void)unholdDie: (NSNumber *)dieIndex;
+-(void)displayUnholdDies;
 
 @end
